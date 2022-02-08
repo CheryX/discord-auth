@@ -1,0 +1,33 @@
+{
+    "name": "cmp-learning",
+    "version": "1.0.0",
+    "description": "My first bigger open-source project. The app is designed to teach people basic stuff about computers, programming &amp; more.",
+    "main": "index.js",
+    "scripts": {
+        "e": "npx nodemon --ignore ./database",
+        "c": "nodemon --ignore ./database",
+        "start": "node ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/CheryX/cmp-learning.git"
+    },
+    "author": "CheryX & Electropirat",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/CheryX/cmp-learning/issues"
+    },
+    "homepage": "https://github.com/CheryX/cmp-learning#readme",
+    "dependencies": {
+        "ejs": "^3.1.6",
+        "express": "^4.17.2",
+        "express-session": "^1.17.2",
+        "https": "^1.0.0",
+        "log4js": "^6.4.1",
+        "memorystore": "^1.6.6",
+        "passport": "^0.5.2",
+        "passport-discord": "^0.1.4",
+        "path": "^0.12.7",
+        "url": "^0.11.0"
+    }
+}
