@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:wght@400;900&display=swap');
+
+/* Colors */
+:root {
+    --dark: #000807;
+    --accent: #9D96B8;
+    --accent-light: #B9B4CE;
+    --accent-sec: #3B3355;
+    --background: #FBF9FF;
+    --highlight: #5D737E;
+}
+
+body {
+    margin: 0;
+    color: var(--accent-sec);
+    
+    font-family: 'Fredoka One', sans-serif;
+}
+
+/* 
+    ***** HEADER SECTION *****
+*/
+
+header {
+    padding: 2rem 0;
+
+    /* Flexbox */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* Sticky */
+    position: fixed;
+    z-index: 100;
+    top: 0;
+
+    width: 100vw;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.3s ease-in-out;
+}
+
+.header {
+    padding-left: 150px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Version of the header after scrolling down */
+header.scroll {
+    padding: 1rem 0;
+    background-color: #fff;
+}
+
+header.scroll .header {
+    padding-left: 100px;
+}
+
+.nav {margin-right: 50px;}
+.nav a {
+    color: var(--accent-sec);
+    font-size: 1.5rem;
+    margin-right: 30px;
+    transition: 0.3s ease-in-out;
+}
+
+/* 
+    ***** LAUNCH PAGE SECTION *****
+*/
+
+article {
+    background: linear-gradient(to top, var(--accent-light), var(--background));
+    height: 100vh;
+
+    /* Flexbox */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.title {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--accent-sec);
+}
+
+.title img {
+    width: 4rem;
+    margin-right: 1rem;
+}
+
+.title h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.left-text {
+    max-width: 500px;
+}
+
+h2 {
+    font-size: 3rem;
+    color: var(--accent-sec);
+    margin: 0;
+    padding-bottom: 40px;
+}
+
+.image {
+    transform: scale(0.9);
+}
+
+.button {
+    background-color: var(--accent-sec);
+    color: var(--background);
+    text-align: center;
+    padding: 15px;
+    font-size: 2em;
+    border-radius: 10px;
+    border-bottom: 10px solid var(--dark);
+}
+
+.button:hover {
+    background-color: #2b253d;
+    color: #ffffff;
+}
+
+.button:active {
+    margin-top: 10px;
+    border-bottom: none;
+}
+
+.image > img {
+    filter: drop-shadow(5px 5px 0 white) 
+            drop-shadow(-5px -5px 0 white)
+            drop-shadow(-5px 5px 0 white)
+            drop-shadow(5px -5px 0 white);
+}
+
+/* Divide sections with a nice curve */
+.divide svg {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100px;
+}
+
+.divide .shape-fill {
+    fill: var(--accent-light);
+}
+
+/* Global article writing(-ish) */
+
+section {width: 80vw;margin: 0 auto;}
+section h1, section h2 {text-align: center;}
+section h1 {font-size: 3em;}
+section h2 {font-size: 2em;}
+section p {font-size: 1.5em;}
+
+/* Utilities */
+
+/* No text decoration */
+a.clean {text-decoration: none;}
+a {color: var(--dark);}
+
+/* Transition when clicking on GET STARTED */
+div.transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    transform: translateY(-100%);
+
+    height: 100%;
+    width: 100%;
+    background-color: var(--dark);
+    z-index: 99999;
+    transition: 0.2s ease-in-out;
+}

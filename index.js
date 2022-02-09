@@ -6,8 +6,6 @@ const session = require("express-session");
 const strategy = require("passport-discord").Strategy;
 const MemoryStore = require("memorystore")(session);
 const logger = require("log4js").getLogger();
-const cookieParser = require("cookie-parser");
-
 
 const app = express()
 
@@ -56,14 +54,11 @@ app.use(passport.session());
 app.set('view engine', 'ejs');
 
 //Add /public directory
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/views/public'));
 
 //Allow parsing body to json
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-
-//Allow parsing cookies
-app.use(cookieParser());
 
 //Pages
 app.use("/login", require("./routes/login"));
