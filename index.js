@@ -6,12 +6,21 @@ const session = require("express-session");
 const strategy = require("passport-discord").Strategy;
 const MemoryStore = require("memorystore")(session);
 const logger = require("log4js").getLogger();
+const fs = require("fs");
 
 const app = express()
 
 //Serializing and deserializing user
 passport.serializeUser((user, done) => done(null, user));
 passport.deserializeUser((obj, done) => done(null, obj));
+
+//Checking if config.json exists 
+if ( !fs.existsSync("./config.json") ) {
+    logger.level = "error";
+
+    logger.error("Config file not found! Create a config.json file and try again.");
+    process.exit(1);
+}
 
 // INFO: Create your own config.json with following schema:
 // {
