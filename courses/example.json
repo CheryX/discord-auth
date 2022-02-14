@@ -1,0 +1,67 @@
+{
+    "name": "C++",
+    "description": "A short description about the course.",
+    "authors": [
+        {
+            "name": "John Smith",
+            "link": "A link to John Smith's profile e.g. on discord"
+        },
+        {
+            "name": "Jane Doe",
+            "link": "A link to Jane Doe's profile e.g. on discord"
+        }
+    ],
+    "lessons": {
+        "basics": {
+            "name": "Basics",
+            "description": "A short description about the lesson.",
+            "topics": [
+                {
+                    "name": "Introduction",
+                    "text": "# Introduction\n\nThis is a short description about the lesson.\n> You can use markdown tho!"
+                },
+                {
+                    "name": "Hello World",
+                    "text": "# Hello World"
+                },
+                {
+                    "name": "Variables",
+                    "text": "# Variables"
+                },
+                {
+                    "name": "Functions",
+                    "text": "# Functions"
+                }
+            ],
+            "questions": [
+                {
+                    "name": "Question 1",
+                    "text": "What is the answer to life, the universe and everything?",
+                    "type": 1,
+                    "answers": [
+                        {
+                            "text": "42",
+                            "correct": true
+                        },
+                        {
+                            "text": "42.0",
+                            "correct": false
+                        },
+                        {
+                            "text": "42.1",
+                            "correct": false
+                        }
+                    ]
+                },
+                {
+                    "name": "Question 2",
+                    "text": "Fill the blank",
+                    "type": 2,
+                    "hint": "What is the type of the variable? It returns `0`.",
+                    "questions": "%s void main() { \n... \n return 0; \n}",
+                    "answers": ["int"]
+                }
+            ]
+        }
+    }
+}
