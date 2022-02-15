@@ -1,49 +1,71 @@
 # LAMCODE
-My first bigger open-source project. The app is designed to teach people basic stuff about programming &amp; more.
+My first bigger open-source project. The app is designed to teach 
+people basic stuff about programming &amp; more.
 
-## Note about cloning
-File `config.json` is private, use the following schema for config.json.
-```json
-{
-    "id": "",
-    "clientSecret": "",
-    "callbackURL": ""
-}
-```
+<div style="text-align: center;">
 
-## Previews
+![Discord Online Count](https://discord.com/api/guilds/740228240286679101/embed.png)
+![GitHub branch checks state](https://github.com/CheryX/lamcode/actions/workflows/node.js.yml/badge.svg)
 
-![Main Website](https://user-images.githubusercontent.com/58445363/153083217-fe0bf96d-b764-41c5-9b50-f638e61cda4c.png)
-![Courses](https://user-images.githubusercontent.com/58445363/153083224-675e4936-0be9-4372-96da-6583fbe828ea.png)
-![Lessons](https://user-images.githubusercontent.com/58445363/153086306-e1ce26fa-2998-44b3-b8e0-a0e977d49e55.png)
+</div>
 
-# Docs
+
+> ## Note about cloning
+> File `config.json` is private, use the following schema for config.json.
+> ```json
+> {
+>     "id": "",
+>     "clientSecret": "",
+>     "callbackURL": "",
+>     "developer": true //Access to all courses
+> }
+> ```
+
+# Contributing
 
 ## How to add new Courses
 
-> Note: This schema can and will change, Don't use it for now.
+> Note: This schema can and will change, so please don't use it.
 
-### Adding new Courses
+The `/courses` folder is where you can add new courses.
+Begin by creating a new `.json` file and name it what you want.
 
-You can add new courses by using the following schema.
+Name | Description | Example
+-----|-------------|--------
+name | The name of the course | C++
+icon | The icon of the course | `icons/cpp.svg`
+description | A short description about the course | Learn how to code using C++
+authors | An array of authors |
+lessons | An array of lessons |
+
+### Authors
+
+Name | Description | Example
+-----|-------------|--------
+name | The name of the author | CheryX
+icon | The icon of the author | `https://i.imgur.com/XXXXXX.png`
+link | The link to the author's website | `https://www.youtube.com/watch?v=dQw4w9WgXcQ` 
+
+**Example**
 
 ```json
 {
     "name": "C++",
+    "icon": "icons/cpp.svg",
     "description": "A short description about the course.",
     "authors": [
         {
             "name": "John Smith",
+            "icon": "https://i.imgur.com/XXXXXX.png",
             "link": "A link to John Smith's profile e.g. on discord"
         },
     ],
     "lessons": [
-        
+
     ]
 }
 ```
 
-Now you can add new lessons to the course using the following schema.
 
 ```json
 "basics": {
@@ -72,8 +94,11 @@ Now you can add new lessons to the course using the following schema.
 }
 ```
 
-#### Question Types
+### Question Types
 
-1. Multiple Choice, supports multiple answers
-2. Fill the blank
-3. True or False
+ID | Description
+---|-------------
+1  | Multiple Choice
+2  | Fill in the Blank
+3  | Code
+4  | True or False

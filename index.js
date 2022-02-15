@@ -73,6 +73,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use("/login", require("./routes/login"));
 app.use("/callback", require("./routes/callback"));
 app.use("/logout", require("./routes/logout"));
+app.use("/courses", require("./routes/courses"));
 app.use("/", require("./routes/"));
 
 //Set up logger
