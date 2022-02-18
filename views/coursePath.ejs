@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" href="/style.css"> -->
+        <title>LAMCODE - Courses</title>
+        
+    </head>
+
+    <body>
+        <h1>Courses » <%- course.name %></h1>
+        <hr>
+        <h2>Lessons</h2>
+        <ol>
+            <% (course.lessons).forEach(element => { %>
+                <li>
+                    <%- element.name %> - <%- element.description %>
+                    <ol>
+                        <% - element.topics.forEach(lesson => { %>
+                            <li>
+                                <%- lesson.name %> - <%- lesson.text %>
+                            </li>
+                            <% }) %>
+                    </ol>
+                </li>
+            <% }); %>
+        </ol>
+
+    </body>
+    
+</html>

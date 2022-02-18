@@ -1,0 +1,123 @@
+[
+    {
+        "name": "C++",
+        "id": "cpp",
+        "description": "A short description about the course.",
+        "authors": [
+            {
+                "name": "John Smith",
+                "link": "A link to John Smith's profile e.g. on discord"
+            }
+        ]
+    },
+    {
+        "name": "Python",
+        "id": "python",
+        "description": "A short description about the course.",
+        "authors": [
+            {
+                "name": "John Smith",
+                "link": "A link to John Smith's profile e.g. on discord"
+            }
+        ]
+    },
+    {
+        "name": "Java",
+        "id": "java",
+        "description": "A short description about the course.",
+        "authors": [
+            {
+                "name": "John Smith",
+                "link": "A link to John Smith's profile e.g. on discord"
+            }
+        ]
+    },
+    {
+        "name": "C#",
+        "id": "csharp",
+        "description": "A short description about the course.",
+        "authors": [
+            {
+                "name": "John Smith",
+                "link": "A link to John Smith's profile e.g. on discord"
+            }
+        ]
+    },
+    {
+        "name": "JavaScript",
+        "id": "javascript",
+        "description": "A short description about the course.",
+        "authors": [
+            {
+                "name": "John Smith",
+                "link": "A link to John Smith's profile e.g. on discord"
+            }
+        ]
+    },
+    {
+        "name": "TypeScript",
+        "id": "typescript",
+        "description": "A short description about the course.",
+        "authors": [
+            {
+                "name": "John Smith",
+                "link": "A link to John Smith's profile e.g. on discord"
+            }
+        ]
+    },
+    {
+        "name": "Rust",
+        "id": "rust",
+        "description": "A short description about the course.",
+        "authors": [
+            {
+                "name": "John Smith",
+                "link": "A link to John Smith's profile e.g. on discord"
+            }
+        ]
+    },
+    {
+        "name": "Kotlin",
+        "id": "kotlin",
+        "description": "A short description about the course.",
+        "authors": [
+            {
+                "name": "John Smith",
+                "link": "A link to John Smith's profile e.g. on discord"
+            }
+        ]
+    },
+    {
+        "name": "C",
+        "id": "c",
+        "description": "A short description about the course.",
+        "authors": [
+            {
+                "name": "John Smith",
+                "link": "A link to John Smith's profile e.g. on discord"
+            }
+        ]
+    },
+    {
+        "name": "Go",
+        "id": "go",
+        "description": "A short description about the course.",
+        "authors": [
+            {
+                "name": "John Smith",
+                "link": "A link to John Smith's profile e.g. on discord"
+            }
+        ]
+    },
+    {
+        "name": "Swift",
+        "id": "swift",
+        "description": "A short description about the course.",
+        "authors": [
+            {
+                "name": "John Smith",
+                "link": "A link to John Smith's profile e.g. on discord"
+            }
+        ]
+    }
+]

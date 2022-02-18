@@ -12,16 +12,19 @@
     </head>
 
     <body>
-        <div>
-            <div>
-                <h3>Title</h3>
-                <p>Additional info</p>
-                <button> </button>
-            </div>
-        </div>
+        <h1>Courses</h1>
+        <hr>
+        <p>Course List:</p>
+        <ul>
+            <% courses.forEach(element => { %>
+                <li>
+                    <a href="/courses/<%- element.id %>">
+                        <%- element.name %> - <%- element.description %>
+                    </a>          
+                </li>
+            <% }); %>
+        </ul>
 
-        <button id="example" class="courseButton">kododawanie</button>
-        <button id="example2" class="courseButton">lamuszenie</button>
     </body>
     
 </html>

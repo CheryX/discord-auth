@@ -11,9 +11,10 @@
             "link": "A link to Jane Doe's profile e.g. on discord"
         }
     ],
-    "lessons": {
-        "basics": {
+    "lessons": [
+        {
             "name": "Basics",
+            "id": "basics",
             "description": "A short description about the lesson.",
             "topics": [
                 {
@@ -63,5 +64,5 @@
                 }
             ]
         }
-    }
+    ]
 }
