@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAMCODE - Home</title>
+</head>
+<body>
+    
+    <h1><a href="/courses">Courses</a> » <%- course.name %></h1>
+    
+    <hr>
+
+    <h2>Course info</h2>
+    
+    <ul>
+        <li>Name: <%-course.name%></li>
+        <li>Description: <%-course.description%></li>
+        <li>
+            Authors: 
+            <ol>
+                <% for (var i in course.authors) { %>
+                    <li><%-course.authors[i].name%></li>
+                <% } %> 
+            </ol>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>Topics</h2>
+
+    <ol>
+        <% for (var i in course.topics) { %>
+            <li>
+                <h3><%-course.topics[i].name%></h3> 
+                <p><%-course.topics[i].description%></p>
+                <hr> 
+                <p><%-course.topics[i].text%></p>
+                <hr> 
+                <h3>Questions</h3>
+                <ol>
+                    <% for (var j in course.topics[i].questions) { %>
+                        <li>
+                            <p>Title: <%- course.topics[i].questions[j].title %></p>
+                            <% if (course.topics[i].questions[j].type == 1) { %>
+                                <p>Choose one</p>
+                                <ol>
+                                    <% for (var k in course.topics[i].questions[j].anwsers) { %>
+                                        <li><%- course.topics[i].questions[j].anwsers[k].text %> (<%-course.topics[i].questions[j].anwsers[k].correct %>) </li>
+                                    <% } %>
+                                </ol>
+                            <% } else if (course.topics[i].questions[j].type == 2) { %>
+                                <p>Fill the blank</p>
+                                <code><%- course.topics[i].questions[j].text.split('%s')[0] %> </code> <b>[TEXT HERE]</b> <code> <%- course.topics[i].questions[j].text.split('%s')[1] %></code>
+                                <p>Anwsers: 
+                                    <% for (var k in course.topics[i].questions[j].correct) { %>
+                                        <%- course.topics[i].questions[j].correct[k] %>
+                                    <% } %>
+                                </p> 
+                            <% } %>
+                            
+                        </li>
+                    <% } %>
+                </ol>
+            </li>
+        <% } %>
+    </ol>
+
+
+</body>
+</html>

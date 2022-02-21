@@ -1,0 +1,52 @@
+[
+    {
+        "name": "C++",
+        "id": "cpp",
+        "description": "Learn how to code in C++ & more"
+    },
+    {
+        "name": "Java",
+        "id": "java",
+        "description": "Coding in Java is fun jk"
+    },
+    {
+        "name": "Python",
+        "id": "python",
+        "description": "Learn how to code in Python & more"
+    },
+    {
+        "name": "JavaScript",
+        "id": "javascript",
+        "description": "Learn how to code in JavaScript & more"
+    },
+    {
+        "name": "C#",
+        "id": "csharp",
+        "description": "Learn how to code in C# & more"
+    },
+    {
+        "name": "Ruby",
+        "id": "ruby",
+        "description": "Learn how to code in Ruby & more"
+    },
+    {
+        "name": "Swift",
+        "id": "swift",
+        "description": "Learn how to code in Swift & more"
+    },
+    {
+        "name": "React",
+        "id": "react",
+        "description": "Learn how to code in React & more"
+    },
+    {
+        "name": "Angular",
+        "id": "angular",
+        "description": "Learn how to code in Angular & more"
+    },
+    {
+        "name": "Vue",
+        "id": "vue",
+        "description": "Learn how to code in Vue & more"
+    }
+]
