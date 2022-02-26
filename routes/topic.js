@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
 
         const course = courseUtils.getCourse(courseID);
 
-        res.render("topic", {course, topicID})
+        res.render("topic", {course, topicID});
     
     } else {
         res.redirect("/login");

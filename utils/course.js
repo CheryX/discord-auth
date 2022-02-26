@@ -11,4 +11,4 @@ function getCourse(courseID) {
 module.exports = {
     getAllCourses,
     getCourse
-}
+};

@@ -8,7 +8,7 @@ const MemoryStore = require("memorystore")(session);
 const logger = require("log4js").getLogger();
 const fs = require("fs");
 
-const app = express()
+const app = express();
 
 //Serializing and deserializing user
 passport.serializeUser((user, done) => done(null, user));
@@ -26,8 +26,9 @@ if ( !fs.existsSync("./config.json") ) {
 // {
 //     "id": "",
 //     "clientSecret": "",
-//     "callbackURL": ""
-//  }
+//     "callbackURL": "",
+//     "isDeveloper": true
+// }
 const config = require("./config.json");
 
 //Set up passport for discord
@@ -40,7 +41,7 @@ passport.use(
     }, (_accessToken, _refreshToken, profile, done) => {
         process.nextTick(() => done(null, profile));
     })
-)
+);
 
 //Create session that lasts for a month
 app.use(
@@ -52,7 +53,7 @@ app.use(
         cookie: {
             maxAge: 1000 * 60 * 60 * 24 * 30,
         }
-    }),
+    })
 );
 
 //Initialize passport
@@ -83,5 +84,5 @@ logger.level = "info";
 
 //Listen to website
 app.listen(8000, () => {
-    logger.info("Website listening on http://localhost:8000") 
+    logger.info("Website listening on http://localhost:8000");
 });

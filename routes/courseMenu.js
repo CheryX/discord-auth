@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
         const course = courseUtils.getCourse(courseID);
 
         // just render the content of the course (temp)
-        res.render("courseMenu", {course})
+        res.render("courseMenu", {course});
     
     } else {
         res.redirect("/login");
