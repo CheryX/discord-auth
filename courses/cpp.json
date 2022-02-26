@@ -1,5 +1,6 @@
 {
     "name": "C++",
+    "id": "cpp",
     "description": "what am i doing with my file",
     "authors": [
         {
@@ -11,9 +12,10 @@
             "link": "A link to Jane Doe's profile e.g. on discord"
         }
     ],
-    "topics": [
-        {
-            "name": "example topic pls help me",
+    "topics": {
+        "variables": {
+            "name": "Variables",
+            "id": "variables",
             "description": "I AHVE TO FIND AN OCTAGON 1 2 3 4 5 6 7 8.",
             "text": "The text of the topic.",
             "questions": [
@@ -40,6 +42,12 @@
                     ]
                 }
             ]
+        },
+        "functions": {
+            "name": "Functions",
+            "id": "functions",
+            "description": "wa wa wa wa",
+            "text": "The text of the topic."
         }
-    ]
+    }
 }

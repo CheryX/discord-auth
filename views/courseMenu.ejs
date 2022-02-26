@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <h1><a href="/courses">Courses</a> » <%- course.name %></h1>
+    <h1><a href="/courses">Courses</a> » <%- course.name %> </h1>
     
     <hr>
 
@@ -34,36 +34,9 @@
     <ol>
         <% for (var i in course.topics) { %>
             <li>
-                <h3><%-course.topics[i].name%></h3> 
-                <p><%-course.topics[i].description%></p>
-                <hr> 
-                <p><%-course.topics[i].text%></p>
-                <hr> 
-                <h3>Questions</h3>
-                <ol>
-                    <% for (var j in course.topics[i].questions) { %>
-                        <li>
-                            <p>Title: <%- course.topics[i].questions[j].title %></p>
-                            <% if (course.topics[i].questions[j].type == 1) { %>
-                                <p>Choose one</p>
-                                <ol>
-                                    <% for (var k in course.topics[i].questions[j].anwsers) { %>
-                                        <li><%- course.topics[i].questions[j].anwsers[k].text %> (<%-course.topics[i].questions[j].anwsers[k].correct %>) </li>
-                                    <% } %>
-                                </ol>
-                            <% } else if (course.topics[i].questions[j].type == 2) { %>
-                                <p>Fill the blank</p>
-                                <code><%- course.topics[i].questions[j].text.split('%s')[0] %> </code> <b>[TEXT HERE]</b> <code> <%- course.topics[i].questions[j].text.split('%s')[1] %></code>
-                                <p>Anwsers: 
-                                    <% for (var k in course.topics[i].questions[j].correct) { %>
-                                        <%- course.topics[i].questions[j].correct[k] %>
-                                    <% } %>
-                                </p> 
-                            <% } %>
-                            
-                        </li>
-                    <% } %>
-                </ol>
+                <h3>
+                    <a href="/courses/<%-course.id%>/<%-course.topics[i].id%>"><%-course.topics[i].name%></a>
+                </h3>
             </li>
         <% } %>
     </ol>

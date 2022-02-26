@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAMCODE - Home</title>
+</head>
+<body>
+    
+    <h1><a href="/courses">Courses</a> » <a href="/courses/<%- course.id %>"><%- course.name %></a> » <%- course.topics[topicID].name %> </h1>
+
+    <hr>
+
+    <h2><%-course.topics[topicID].name%> <%-course.topics[topicID].description%></h2>
+    <p><%-course.topics[topicID].text%></p>
+    <hr> 
+    <h3>Questions</h3>
+    <ol>
+        <% for (var j in course.topics[topicID].questions) { %>
+            <li>
+                <p>Title: <%- course.topics[topicID].questions[j].title %></p>
+                <% if (course.topics[topicID].questions[j].type == 1) { %>
+                    <p>Choose one</p>
+                    <ol>
+                        <% for (var k in course.topics[topicID].questions[j].anwsers) { %>
+                            <li><%- course.topics[topicID].questions[j].anwsers[k].text %> (<%-course.topics[topicID].questions[j].anwsers[k].correct %>) </li>
+                        <% } %>
+                    </ol>
+                <% } else if (course.topics[topicID].questions[j].type == 2) { %>
+                    <p>Fill the blank</p>
+                    <code><%- course.topics[topicID].questions[j].text.split('%s')[0] %> </code> <b>[TEXT HERE]</b> <code> <%- course.topics[topicID].questions[j].text.split('%s')[1] %></code>
+                    <p>Anwsers: 
+                        <% for (var k in course.topics[topicID].questions[j].correct) { %>
+                            <%- course.topics[topicID].questions[j].correct[k] %>
+                        <% } %>
+                    </p> 
+                <% } %>
+                
+            </li>
+        <% } %>
+    </ol>
+
+
+</body>
+</html>
