@@ -1,5 +1,5 @@
 # Discord auth template
-Fell free to use this template that can help you make a dashboard for your bot.
+This is a simple express template that allows you to log in via discord, it can be useful for making a dashboard for your discord bot, or just a logging system.
 
 This template supports:
 
