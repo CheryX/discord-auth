@@ -27,7 +27,6 @@ if ( !fs.existsSync("./config.json") ) {
 //     "id": "",
 //     "clientSecret": "",
 //     "callbackURL": "",
-//     "isDeveloper": true
 // }
 const config = require("./config.json");
 
@@ -47,7 +46,7 @@ passport.use(
 app.use(
     session({
         store: new MemoryStore({ checkPeriod: 86400000 }),
-        secret: "language-app",
+        secret: "makeItMoreSecretAndMorePrivate",
         resave: false,
         saveUninitialized: false,
         cookie: {
@@ -74,9 +73,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use("/login", require("./routes/login"));
 app.use("/callback", require("./routes/callback"));
 app.use("/logout", require("./routes/logout"));
-app.use("/courses", require("./routes/courses"));
-app.use("/courses/:courseID", require("./routes/courseMenu"));
-app.use("/courses/:courseID/:topicID", require("./routes/topic"));
+app.use("/info", require("./routes/info"));
 app.use("/", require("./routes/"));
 
 //Set up logger

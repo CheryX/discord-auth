@@ -1,23 +1,21 @@
 {
-    "name": "cmp-learning",
+    "name": "discord-auth",
     "version": "1.0.0",
-    "description": "My first bigger open-source project. The app is designed to teach people basic stuff about computers, programming &amp; more.",
+    "description": "Fell free to use this template that can help you make a dashboard for your bot.",
     "main": "index.js",
     "scripts": {
-        "e": "npx nodemon --ignore ./database",
-        "c": "nodemon --ignore ./database",
         "start": "node ."
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/CheryX/cmp-learning.git"
+        "url": "git+https://github.com/CheryX/discord-auth.git"
     },
-    "author": "CheryX & Electropirat",
+    "author": "CheryX",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/CheryX/cmp-learning/issues"
+        "url": "https://github.com/CheryX/discord-auth/issues"
     },
-    "homepage": "https://github.com/CheryX/cmp-learning#readme",
+    "homepage": "https://github.com/CheryX/discord-auth#readme",
     "dependencies": {
         "ejs": "^3.1.6",
         "express": "^4.17.2",
