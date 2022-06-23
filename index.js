@@ -6,19 +6,28 @@ const session = require("express-session");
 const strategy = require("passport-discord").Strategy;
 const MemoryStore = require("memorystore")(session);
 const logger = require("log4js").getLogger();
+const fs = require("fs");
 
-const app = express()
+const app = express();
 
 //Serializing and deserializing user
 passport.serializeUser((user, done) => done(null, user));
 passport.deserializeUser((obj, done) => done(null, obj));
 
+//Checking if config.json exists 
+if ( !fs.existsSync("./config.json") ) {
+    logger.level = "error";
+
+    logger.error("Config file not found! Create a config.json file and try again.");
+    process.exit(1);
+}
+
 // INFO: Create your own config.json with following schema:
 // {
 //     "id": "",
 //     "clientSecret": "",
-//     "callbackURL": ""
-//  }
+//     "callbackURL": "",
+// }
 const config = require("./config.json");
 
 //Set up passport for discord
@@ -31,19 +40,19 @@ passport.use(
     }, (_accessToken, _refreshToken, profile, done) => {
         process.nextTick(() => done(null, profile));
     })
-)
+);
 
 //Create session that lasts for a month
 app.use(
     session({
         store: new MemoryStore({ checkPeriod: 86400000 }),
-        secret: "language-app",
+        secret: "makeItMoreSecretAndMorePrivate",
         resave: false,
         saveUninitialized: false,
         cookie: {
             maxAge: 1000 * 60 * 60 * 24 * 30,
         }
-    }),
+    })
 );
 
 //Initialize passport
@@ -54,7 +63,7 @@ app.use(passport.session());
 app.set('view engine', 'ejs');
 
 //Add /public directory
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/views/public'));
 
 //Allow parsing body to json
 app.use(bodyParser.json());
@@ -64,6 +73,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use("/login", require("./routes/login"));
 app.use("/callback", require("./routes/callback"));
 app.use("/logout", require("./routes/logout"));
+app.use("/info", require("./routes/info"));
 app.use("/", require("./routes/"));
 
 //Set up logger
@@ -71,5 +81,5 @@ logger.level = "info";
 
 //Listen to website
 app.listen(8000, () => {
-    logger.info("Website listening on http://localhost:8000") 
+    logger.info("Website listening on http://localhost:8000");
 });

@@ -9,7 +9,7 @@ router.get("/", passport.authenticate("discord", { failureRedirect: "/" }), (req
         req.session.backURL = null;
         res.redirect(backURL);
     } else {
-        res.redirect("/");
+        res.redirect("/info");
     }
 }
 );
